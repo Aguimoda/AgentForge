@@ -1,0 +1,18 @@
+# Archivos de estado del proyecto — específicos de cada proyecto, no van en la plantilla
+estado.md
+plan.md
+learnings.md
+produccion.md
+todo.md
+launch.json
+
+# Configuración local de Claude Code — no versionar
+settings.local.json
+
+# Context de proyecto específico — cada proyecto crea el suyo propio
+# (la plantilla genérica está en skills/project-context/)
+skills/*-context/
+!skills/project-context/
+
+# macOS
+.DS_Store
