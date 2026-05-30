@@ -104,7 +104,11 @@ ANTES de escribir código, responder:
 >
 > **Si el componente tiene >3 props booleanas o variantes**: Lee `.claude/skills/vercel-composition-patterns/SKILL.md` antes de diseñar la API del componente — compound components, context providers, state lifting.
 >
-> **Si el componente tiene animaciones o transiciones entre estados/páginas**: Lee `.claude/skills/vercel-react-view-transitions/SKILL.md` — View Transitions API nativa de React, sin librerías externas.
+> **Si el componente tiene cualquier animación** (hover, transición de estado, feedback, entrada/salida):
+> 1. Lee `.claude/skills/bencium-bencium-controlled-ux-designer/MOTION-SPEC.md` **primero** — define la curva de easing correcta y la duración según el tipo de interacción (botón=100ms ease-out, modal=300ms, bottom sheet=300ms, page=400ms). Solo animar `transform` y `opacity`, nunca `width`/`height`/`margin`.
+> 2. Lee `.claude/skills/vercel-react-view-transitions/SKILL.md` **después** si la animación implica transiciones entre páginas, shared elements, o reordenación de listas — View Transitions API nativa, sin librerías externas.
+>
+> ⚠️ De Vacío no usa Framer Motion. Usar los equivalentes CSS/Tailwind del MOTION-SPEC (`transition-*`, `duration-*`, `ease-*`, `@keyframes`), no los ejemplos `motion.*`.
 
 **Convenciones de código:**
 ```typescript
@@ -203,7 +207,8 @@ Si el componente es para el Modo Conducción (conductor activo):
 - `bencium-bencium-impact-designer` — **Paso 2**: dirección visual distintiva, anti-AI-slop
 - `bencium-typography` — **Paso 3** si hay texto visible: tipografía correcta
 - `vercel-composition-patterns` — **Paso 3** si >3 props/variantes: compound components
-- `vercel-react-view-transitions` — **Paso 3** si hay animaciones/transiciones
+- `bencium-bencium-controlled-ux-designer/MOTION-SPEC.md` — **Paso 3** si hay cualquier animación: easing + duración correctos
+- `vercel-react-view-transitions` — **Paso 3** si hay transiciones de página/shared elements
 - `uxui/accessibility-auditor` — verificar contraste y accesibilidad del componente
 - `uxui/mobile-first-designer` — verificar comportamiento 375px vs 1280px
 - `calidad/code-reviewer` — revisión de calidad de código antes del PR

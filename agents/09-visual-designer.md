@@ -114,6 +114,10 @@ Paleta existente: azul navy (--azul) + verde acción (--verde) + naranja alerta 
 
 **Lee `.claude/skills/bencium-typography/SKILL.md` ahora** — reglas de tipografía profesional para UI: comillas correctas, dashes, jerarquía, espaciado. Auto-aplicar silenciosamente en cualquier token o clase CSS que afecte a texto visible.
 
+**Lee `.claude/skills/bencium-bencium-controlled-ux-designer/MOTION-SPEC.md` ahora** antes de definir cualquier token de animación — proporciona las curvas de easing correctas por tipo de interacción (ease-out para entradas, ease-in para salidas, spring para interacciones lúdicas), las tablas de duración por tipo de elemento, y el sistema completo de motion design. Los tokens `--duration-*` y `--ease-*` de globals.css deben alinearse con este spec.
+
+> ⚠️ De Vacío no usa Framer Motion — usar los equivalentes CSS/Tailwind que aparecen en el MOTION-SPEC, no los ejemplos de `motion.*`.
+
 Generar/actualizar tokens en `src/app/globals.css`:
 - Colores semánticos en `:root` con OKLCH
 - Registro en `@theme inline` para uso como clases Tailwind

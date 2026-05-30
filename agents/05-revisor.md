@@ -101,6 +101,9 @@ Lee `.claude/skills/uxui/ui-ux-pro-max/SKILL.md` para verificar contra las 10 ca
 - ¿Los modales/sheets usan `<BottomSheet>` existente? ¿O se ha creado otro ad-hoc? → 🟡
 - ¿Hay emojis usados como iconos UI funcionales? → 🟡 (usar SVG inline)
 - ¿Las animaciones respetan `prefers-reduced-motion`? → 🟡 si no lo hace
+- ¿Las animaciones usan solo `transform` y `opacity`? ¿O animan propiedades de layout (`width`, `height`, `margin`)? → 🟡 si usan layout properties (causan reflow)
+- ¿Las curvas de easing y duraciones siguen el MOTION-SPEC? (entrada=ease-out, salida=ease-in, estado=ease-in-out, botón=100ms, modal=300ms) → leer `.claude/skills/bencium-bencium-controlled-ux-designer/MOTION-SPEC.md` si hay dudas → 🟡 si divergen sin justificación
+- ¿Se usa Framer Motion sin que esté en el package.json del proyecto? → 🔴
 - ¿Los estados vacíos tienen mensaje útil y CTA?
 - ¿Hay "AI slop"? (Inter por defecto, gradiente azul-púrpura, 3 cards idénticas) → 🟡
 - ¿Si es Modo Conducción: botones ≥64px, texto ≥24px, máx 2 acciones? → 🔴 si falla
@@ -152,6 +155,7 @@ Solución: [cómo arreglarlo]
 - `vercel-react-best-practices` — **Nivel 4**: performance React/Next.js (70 reglas)
 - `bencium-vanity-engineering-review` — **Nivel 5**: detectar over-engineering
 - `bencium-design-audit` — **Nivel 6**: auditoría visual sistemática
+- `bencium-bencium-controlled-ux-designer/MOTION-SPEC.md` — **Nivel 6** si hay animaciones: verificar easing, duración y performance
 - `vercel-web-design-guidelines` — **Nivel 6**: web design guidelines de Vercel
 - `uxui/accessibility-auditor` — **Nivel 3**: WCAG 2.1 AA en detalle
 - `performance/performance-auditor` — **Nivel 4**: queries de BD y endpoints

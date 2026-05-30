@@ -47,6 +47,9 @@ Si falta algún punto → para y documenta qué falta antes de continuar.
 > **Si la tarea tiene componentes UI:**
 > Lee `.claude/skills/uxui/ui-ux-pro-max/SKILL.md` **ahora** antes de escribir JSX. Aplica las categorías CRÍTICO (Accesibilidad + Touch) y ALTO (Estilo + Layout) desde el primer commit — no retrofitar al final.
 >
+> **Si la tarea incluye animaciones o transiciones de estado:**
+> Lee `.claude/skills/bencium-bencium-controlled-ux-designer/MOTION-SPEC.md` **ahora** — curva de easing y duración exacta según el tipo de interacción. Solo `transform`/`opacity`. Incluir siempre `prefers-reduced-motion`. No usar Framer Motion (no está en el stack) — solo CSS/Tailwind.
+>
 > **Si la tarea escribe código React o Next.js:**
 > Lee `.claude/skills/vercel-react-best-practices/SKILL.md` **ahora** — 70 reglas de performance organizadas por impacto. Aplica las de prioridad ALTA sin excepción (Server Components, no re-renders innecesarios, parallel fetching).
 >
