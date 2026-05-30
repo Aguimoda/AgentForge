@@ -58,6 +58,12 @@ Si falta algún punto → para y documenta qué falta antes de continuar.
 >
 > **Si la tarea procesa inputs de usuario o toca autenticación:**
 > Lee `.claude/skills/seguridad/security-reviewer.md` **ahora**. Valida con Zod antes de usar cualquier input, nunca interpolar en queries.
+>
+> **Si la tarea modifica el esquema de BD (nuevas tablas, columnas, relaciones, índices):**
+> Lee `.claude/skills/supabase-nextjs/SKILL.md` y `.claude/skills/drizzle-migrations/SKILL.md` **ahora** — patrones Drizzle+Supabase, cómo generar y ejecutar migrations, consideraciones de RLS, server component patterns para BD access.
+>
+> **Si la tarea crea o modifica endpoints de API (route handlers, server actions):**
+> Lee `.claude/skills/rest-api-design/SKILL.md` **ahora** — naming de recursos, HTTP methods correctos, status codes, formato de respuesta de errores (RFC 7807).
 
 ```
 1. Escribe el código mínimo para hacer pasar los tests
@@ -78,6 +84,8 @@ Si falta algún punto → para y documenta qué falta antes de continuar.
 ```
 
 ### Paso 4 — Checklist antes de marcar la tarea como hecha
+
+> **Antes de hacer el commit final:** Lee `.claude/skills/git-commit/SKILL.md` y aplica el formato Conventional Commits (`feat:`, `fix:`, `design:`, `spec:`, `test:`, `docs:`, `refactor:`, `chore:` con scope de la US). Lee `.claude/skills/secret-scanning/SKILL.md` y verifica que el diff no contiene secretos, API keys ni credenciales hardcodeadas. Si encuentras algo sospechoso → **NO hacer commit**, señalarlo al humano.
 
 **Código:**
 - [ ] Todos los escenarios BDD de la tarea pasan en verde
@@ -133,12 +141,18 @@ Añade esto al final de `.claude/TASKS.md` para la tarea actual.
 - `uxui/ui-ux-pro-max` — **Paso 2 si hay UI**: reglas de diseño y checklist
 - `vercel-react-best-practices` — **Paso 2 si hay React/Next.js**: 70 reglas de performance
 - `vercel-composition-patterns` — **Paso 2 si hay componentes complejos**: compound components
+- `bencium-bencium-controlled-ux-designer/MOTION-SPEC.md` — **Paso 2 si hay animaciones**: easing + duración correctos
+- `seguridad/security-reviewer` — **Paso 2** si hay inputs de usuario, autenticación o datos sensibles
+- `supabase-nextjs` — **Paso 2 si hay cambios de BD**: patrones Drizzle+Supabase, RLS
+- `drizzle-migrations` — **Paso 2 si hay cambios de schema**: generate + push migrations
+- `rest-api-design` — **Paso 2 si hay endpoints de API**: naming, HTTP methods, status codes
+- `git-commit` — **Paso 4**: conventional commits format antes del commit final
+- `secret-scanning` — **Paso 4**: verificar que el diff no tiene secretos antes del commit
 - `calidad/code-reviewer` — para revisar tu propio código antes de hacer commit
 - `uxui/accessibility-auditor` — si hay componentes UI
 - `performance/performance-auditor` — si hay queries de BD o endpoints con carga esperada alta
-- `seguridad/security-reviewer` — si hay inputs de usuario, autenticación o datos sensibles
 - `datos/migration-planner` — si hay cambios en el esquema de BD
-- `calidad/refactoring-guide` — si el código a modificar es complejo o legacy
+- `calidad/refactoring-guide` — **Paso 3** si el código a modificar es complejo o legacy
 
 ## HANDOFF — Al completar la tarea
 

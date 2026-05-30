@@ -157,6 +157,8 @@ services:
 
 ### Paso 6 — Monitoring y observabilidad
 
+> **Lee `.claude/skills/observability-designer/SKILL.md` ahora** — SLI/SLO framework, golden signals (latencia, tráfico, errores, saturación), alerting optimization, error budget management. Aplica el método RED (Rate, Errors, Duration) para servicios de requests.
+
 **Lo mínimo desde el primer deploy a producción:**
 
 1. **Error tracking (Sentry):**
@@ -180,7 +182,9 @@ services:
    - Latencia P95 > 3s → alerta
    - Disponibilidad < 99% → alerta
 
-### Paso 7 — Runbooks
+### Paso 7 — Runbooks y gestión de releases
+
+> **Lee `.claude/skills/semantic-versioning/SKILL.md` ahora** — convenciones de versionado semántico (MAJOR.MINOR.PATCH), automatización de releases con conventional commits, generación de changelogs. Aplicar al configurar el pipeline de deploy a producción.
 
 Antes del primer deploy a producción, los siguientes runbooks deben existir:
 
@@ -244,11 +248,13 @@ Lee el archivo de cada skill antes de usarla:
 - `vercel-deploy-to-vercel` — **si se despliega en Vercel**: protocolo completo de deploy, preview vs producción
 - `vercel-vercel-optimize` — **si hay problemas de coste o rendimiento en Vercel**: auditoría basada en métricas reales
 - `vercel-vercel-cli-with-tokens` — **operaciones CLI de Vercel**: tokens, proyectos, env vars
+- `observability-designer` — **Paso 6 SIEMPRE**: SLI/SLO, golden signals, alerting optimization
+- `semantic-versioning` — **Paso 7**: versionado semántico, releases y changelogs
+- `secret-scanning` — **Paso 4**: verificar que el pipeline no expone ni logguea secrets
 - `cicd/ci-cd-designer.md` — diseño detallado del pipeline y etapas
 - `cicd/environment-manager.md` — configuración de entornos (local/staging/prod)
 - `cicd/rollback-strategist.md` — estrategia de rollback y ventanas de mantenimiento
 - `cicd/dependency-manager.md` — política de actualizaciones y vulnerabilidades
-- `performance/observability-designer.md` — setup de monitoring (Sentry, logs estructurados, alertas)
 - `seguridad/security-reviewer.md` — seguridad del pipeline e infraestructura
 - `performance/load-testing.md` — validar infraestructura antes de un lanzamiento importante
 

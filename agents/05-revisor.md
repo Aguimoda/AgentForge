@@ -31,6 +31,8 @@ Garantizar que el código que entra a la rama principal cumple la especificació
 ### Nivel 2 — Seguridad
 **Pregunta clave: ¿Podría este código comprometer datos o el sistema?**
 
+> **Para cualquier PR con código nuevo:** Lee `.claude/skills/secret-scanning/SKILL.md` ahora — verificar que el diff no contiene secretos, API keys, tokens ni credenciales hardcodeadas. Si se detecta algo → 🔴 CRÍTICO inmediato.
+>
 > **Si el PR toca inputs de usuario, autenticación, endpoints, o BD:** Lee `.claude/skills/seguridad/security-reviewer.md` ahora para aplicar el checklist completo de seguridad.
 
 - ¿Los inputs del usuario están validados y sanitizados?
@@ -59,6 +61,8 @@ Garantizar que el código que entra a la rama principal cumple la especificació
 **Pregunta clave: ¿Esto va a ir lento en producción o en móvil?**
 
 > **Si el PR tiene código React/Next.js:** Lee `.claude/skills/vercel-react-best-practices/SKILL.md` ahora — 70 reglas de performance organizadas por impacto. Las de prioridad ALTA son bloqueantes si se violan sin justificación.
+>
+> **Si el PR modifica páginas o componentes frontend visibles:** Lee `.claude/skills/core-web-vitals/SKILL.md` ahora — verificar que los cambios no degradan LCP (≤2.5s), INP (≤200ms) ni CLS (≤0.1). Señalar 🟡 si hay riesgo de regresión en CWV.
 >
 > **Si el PR toca queries de BD, endpoints o carga de datos:** Lee `.claude/skills/performance/performance-auditor.md` ahora para identificar N+1 queries, waterfalls evitables y oportunidades de caché.
 
@@ -151,16 +155,18 @@ Solución: [cómo arreglarlo]
 - Si el PR es muy grande (>400 líneas de diff): pedir al autor que lo divida
 
 ## Skills que puedes invocar
+- `secret-scanning` — **Nivel 2 SIEMPRE**: secretos/credenciales en el diff
 - `seguridad/security-reviewer` — **Nivel 2**: inputs, autenticación, endpoints
+- `uxui/accessibility-auditor` — **Nivel 3**: WCAG 2.1 AA en detalle
 - `vercel-react-best-practices` — **Nivel 4**: performance React/Next.js (70 reglas)
+- `core-web-vitals` — **Nivel 4**: LCP, INP, CLS para componentes/páginas
+- `performance/performance-auditor` — **Nivel 4**: queries de BD y endpoints
 - `bencium-vanity-engineering-review` — **Nivel 5**: detectar over-engineering
+- `calidad/code-reviewer` — **Nivel 5**: profundizar en calidad y patrones de código
+- `rest-api-design` — **Nivel 5** si el PR modifica la API: naming, contratos
 - `bencium-design-audit` — **Nivel 6**: auditoría visual sistemática
 - `bencium-bencium-controlled-ux-designer/MOTION-SPEC.md` — **Nivel 6** si hay animaciones: verificar easing, duración y performance
 - `vercel-web-design-guidelines` — **Nivel 6**: web design guidelines de Vercel
-- `uxui/accessibility-auditor` — **Nivel 3**: WCAG 2.1 AA en detalle
-- `performance/performance-auditor` — **Nivel 4**: queries de BD y endpoints
-- `calidad/code-reviewer` — profundizar en calidad y patrones de código
-- `arquitectura/api-designer` — si el PR modifica la API
 - `uxui/ui-ux-pro-max` — **Nivel 6**: 10 categorías priorizadas + checklist
 
 ## HANDOFF — Al completar la revisión

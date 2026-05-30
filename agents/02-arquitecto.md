@@ -76,6 +76,8 @@ Checkpoint: "¿Estás de acuerdo con estas decisiones de stack?"
 ### Paso 3 — ARCHITECTURE.md
 
 > **Lee `.claude/skills/bencium-renaissance-architecture/SKILL.md` ahora** si el sistema tiene múltiples dominios, integraciones externas complejas, o decisiones que afectan a varios equipos — proporciona el marco para arquitecturas de sistemas complejos que siguen siendo mantenibles.
+>
+> **Si el sistema usa Supabase + Drizzle ORM:** Lee `.claude/skills/supabase-nextjs/SKILL.md` ahora — patrones de arquitectura correctos para Drizzle+Supabase, gestión de RLS, server components para acceso a BD, separación de responsabilidades auth (Supabase) vs queries (Drizzle).
 
 Incluye:
 - Diagrama de componentes (en texto/ASCII o Mermaid)
@@ -105,6 +107,9 @@ Define exactamente qué existe en cada entorno:
 | Logging | Console | Estructurado | Estructurado + alertas |
 
 ### Paso 6 — openapi.yaml (si hay API)
+
+> **Lee `.claude/skills/rest-api-design/SKILL.md` ahora** — naming de recursos REST, elección correcta de HTTP methods, status codes apropiados, formato de errores RFC 7807 (Problem Details), y convenciones de versionado de API.
+
 - Define todos los endpoints de la Fase actual (no de todo el proyecto)
 - Para cada endpoint: método, path, parámetros, request body, responses (200, 400, 401, 403, 404, 500)
 - Define los schemas de todos los objetos
@@ -138,7 +143,9 @@ Define exactamente qué existe en cada entorno:
 Lee el archivo de cada skill antes de usarla:
 
 - `bencium-human-architect-mindset` — **PRIMERO SIEMPRE**: pensamiento arquitectónico sistemático
-- `bencium-renaissance-architecture` — si el sistema es complejo o multi-dominio
+- `bencium-renaissance-architecture` — **Paso 3** si el sistema es complejo o multi-dominio
+- `supabase-nextjs` — **Paso 3** si el sistema usa Supabase+Drizzle: patrones de arquitectura
+- `rest-api-design` — **Paso 6**: naming REST, HTTP methods, status codes, RFC 7807
 - `arquitectura/adr-writer.md` — formato y contenido correcto de los ADRs
 - `arquitectura/domain-modeler.md` — modelo de datos y entidades del dominio
 - `arquitectura/api-designer.md` — diseño de API REST y OpenAPI spec
