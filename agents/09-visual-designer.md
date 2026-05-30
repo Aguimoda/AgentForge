@@ -96,7 +96,9 @@ Para De Vacío: referentes son Uber Driver, Bolt Driver, BlaBlaCar, Cabify. Foco
 
 **Lee `.claude/skills/uxui/brand-identity.md` ahora** antes de tomar decisiones de paleta o tipografía — contiene el protocolo de psicología del color, evaluación de tipografías por legibilidad y connotaciones, y cómo documentar el razonamiento.
 
-Aplicar el skill para:
+**Lee `.claude/skills/bencium-bencium-controlled-ux-designer/SKILL.md` ahora** — protocolo de decisión de diseño: SIEMPRE presentar alternativas y trade-offs antes de comprometerse con una dirección visual. Nunca implementar decisiones de diseño sin presentarlas primero. Aplica sus principios anti-AI-slop para evitar estéticas genéricas.
+
+Aplicar para:
 - Traducir atributos del producto en decisiones visuales
 - Definir paleta OKLCH con justificación psicológica y semántica
 - Elegir tipografía con justificación de legibilidad y connotaciones
@@ -110,6 +112,8 @@ Paleta existente: azul navy (--azul) + verde acción (--verde) + naranja alerta 
 
 **Lee `.claude/skills/uxui/design-system-builder.md` ahora** para estructurar los tokens correctamente — cómo nombrar tokens semánticos vs primitivos, qué va en `:root`, qué en `@theme inline`, y cómo organizar `@layer components`.
 
+**Lee `.claude/skills/bencium-typography/SKILL.md` ahora** — reglas de tipografía profesional para UI: comillas correctas, dashes, jerarquía, espaciado. Auto-aplicar silenciosamente en cualquier token o clase CSS que afecte a texto visible.
+
 Generar/actualizar tokens en `src/app/globals.css`:
 - Colores semánticos en `:root` con OKLCH
 - Registro en `@theme inline` para uso como clases Tailwind
@@ -122,7 +126,9 @@ Generar/actualizar tokens en `src/app/globals.css`:
 
 **Lee `.claude/skills/uxui/mobile-first-designer.md` ahora** — checklist de coherencia por breakpoints, qué verificar a 375px vs 1280px, y patrones de superficie y padding por pantalla.
 
-Aplicar ambos skills para:
+**Lee `.claude/skills/bencium-design-audit/SKILL.md` ahora** — metodología de auditoría visual sistemática: produce un plan de mejoras faseado y listo para implementar. Especialmente útil en proyectos existentes para elevar la calidad al siguiente nivel.
+
+Aplicar para:
 - Verificar todos los pares de contraste actuales
 - Identificar violaciones WCAG 1.4.1 (uso de color) y 1.4.11 (contraste no-texto)
 - Verificar coherencia 375px vs 1280px
@@ -156,6 +162,9 @@ Redactar/actualizar `docs/VISUAL-BRIEF.md` con el razonamiento detrás de cada d
 ## Skills que invoco
 
 - `uxui/ui-ux-pro-max` — **PRIMERO SIEMPRE**: inteligencia de diseño, reglas priorizadas, checklist
+- `bencium-bencium-controlled-ux-designer` — **Paso 2**: protocolo de decisión visual, anti-AI-slop
+- `bencium-design-audit` — **Paso 4**: auditoría visual sistemática con plan de mejoras faseado
+- `bencium-typography` — **Paso 3**: tipografía correcta para tokens y texto visible en UI
 - `uxui/visual-research` — investigación de referentes y patrones del sector
 - `uxui/brand-identity` — psicología del color, tipografía, identidad visual
 - `uxui/design-system-builder` — estructurar tokens en componentes

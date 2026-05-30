@@ -241,6 +241,9 @@ npm update --save
 
 Lee el archivo de cada skill antes de usarla:
 
+- `vercel-deploy-to-vercel` — **si se despliega en Vercel**: protocolo completo de deploy, preview vs producción
+- `vercel-vercel-optimize` — **si hay problemas de coste o rendimiento en Vercel**: auditoría basada en métricas reales
+- `vercel-vercel-cli-with-tokens` — **operaciones CLI de Vercel**: tokens, proyectos, env vars
 - `cicd/ci-cd-designer.md` — diseño detallado del pipeline y etapas
 - `cicd/environment-manager.md` — configuración de entornos (local/staging/prod)
 - `cicd/rollback-strategist.md` — estrategia de rollback y ventanas de mantenimiento

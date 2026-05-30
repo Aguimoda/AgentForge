@@ -58,6 +58,8 @@ Garantizar que el código que entra a la rama principal cumple la especificació
 ### Nivel 4 — Performance
 **Pregunta clave: ¿Esto va a ir lento en producción o en móvil?**
 
+> **Si el PR tiene código React/Next.js:** Lee `.claude/skills/vercel-react-best-practices/SKILL.md` ahora — 70 reglas de performance organizadas por impacto. Las de prioridad ALTA son bloqueantes si se violan sin justificación.
+>
 > **Si el PR toca queries de BD, endpoints o carga de datos:** Lee `.claude/skills/performance/performance-auditor.md` ahora para identificar N+1 queries, waterfalls evitables y oportunidades de caché.
 
 - ¿Se usan Server Components donde no hay estado ni eventos? (Next.js)
@@ -70,6 +72,8 @@ Garantizar que el código que entra a la rama principal cumple la especificació
 
 ### Nivel 5 — Calidad de código
 **Pregunta clave: ¿Podré entender esto en 6 meses?**
+
+> **Lee `.claude/skills/bencium-vanity-engineering-review/SKILL.md` ahora** — detecta over-engineering, abstracciones prematuras, y decisiones técnicas tomadas para el CV del desarrollador en lugar de para resolver el problema. Si detectas patrones de complejidad injustificada, márcalos 🟡.
 
 - ¿Los nombres de variables, funciones y componentes son claros e intuitivos?
 - ¿Las props de componentes están tipadas con `interface` TypeScript?
@@ -84,7 +88,11 @@ Garantizar que el código que entra a la rama principal cumple la especificació
 ### Nivel 6 — Diseño UX
 **Pregunta clave: ¿Se ve y se siente como debe?**
 
-Leer `.claude/skills/uxui/ui-ux-pro-max/SKILL.md` para verificar contra las 10 categorías priorizadas y el checklist pre-entrega.
+Lee `.claude/skills/uxui/ui-ux-pro-max/SKILL.md` para verificar contra las 10 categorías priorizadas y el checklist pre-entrega.
+
+> **Lee `.claude/skills/bencium-design-audit/SKILL.md` ahora** — auditoría visual sistemática: jerarquía, espaciado, consistencia, elevación. Si detectas regresiones visuales respecto al VISUAL-BRIEF.md, márcalas 🟡 o 🔴 según impacto.
+>
+> **Lee `.claude/skills/vercel-web-design-guidelines/SKILL.md` ahora** — verificación de cumplimiento de las web design guidelines de Vercel: accesibilidad, semántica HTML, patrones de UI probados.
 
 **Verificaciones obligatorias:**
 - ¿Es mobile-first? ¿Se ha verificado a 375px?
@@ -140,12 +148,16 @@ Solución: [cómo arreglarlo]
 - Si el PR es muy grande (>400 líneas de diff): pedir al autor que lo divida
 
 ## Skills que puedes invocar
-- `seguridad/security-reviewer` — para profundizar en cualquier aspecto de seguridad
-- `uxui/accessibility-auditor` — para verificar criterios WCAG en detalle
-- `performance/performance-auditor` — para analizar el impacto en performance
-- `calidad/code-reviewer` — para profundizar en calidad y patrones de código
-- `arquitectura/api-designer` — si el PR modifica la API, verificar que el contrato se mantiene
-- `uxui/ui-ux-pro-max` — para verificar nivel 6 (Diseño UX) contra las 10 categorías
+- `seguridad/security-reviewer` — **Nivel 2**: inputs, autenticación, endpoints
+- `vercel-react-best-practices` — **Nivel 4**: performance React/Next.js (70 reglas)
+- `bencium-vanity-engineering-review` — **Nivel 5**: detectar over-engineering
+- `bencium-design-audit` — **Nivel 6**: auditoría visual sistemática
+- `vercel-web-design-guidelines` — **Nivel 6**: web design guidelines de Vercel
+- `uxui/accessibility-auditor` — **Nivel 3**: WCAG 2.1 AA en detalle
+- `performance/performance-auditor` — **Nivel 4**: queries de BD y endpoints
+- `calidad/code-reviewer` — profundizar en calidad y patrones de código
+- `arquitectura/api-designer` — si el PR modifica la API
+- `uxui/ui-ux-pro-max` — **Nivel 6**: 10 categorías priorizadas + checklist
 
 ## HANDOFF — Al completar la revisión
 

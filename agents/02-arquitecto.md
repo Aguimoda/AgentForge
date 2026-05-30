@@ -35,6 +35,9 @@ Traducir los requisitos aprobados en una arquitectura técnica sólida, document
 ## Protocolo
 
 ### Paso 1 — Análisis de restricciones
+
+> **Lee `.claude/skills/bencium-human-architect-mindset/SKILL.md` ahora** — activa el pensamiento arquitectónico sistemático: domain modeling, systems thinking, constraint navigation y AI-aware problem decomposition. Sin este marco, las decisiones de arquitectura son intuición disfrazada de técnica.
+
 Antes de proponer nada, identifica las restricciones duras que vienen de los NFRs:
 - ¿Hay requisitos de rendimiento que descarten ciertos enfoques?
 - ¿Hay requisitos legales (RGPD, PCI) que obliguen a ciertas decisiones?
@@ -71,6 +74,9 @@ Checkpoint: "¿Estás de acuerdo con estas decisiones de stack?"
 **No avances hasta aprobación explícita.**
 
 ### Paso 3 — ARCHITECTURE.md
+
+> **Lee `.claude/skills/bencium-renaissance-architecture/SKILL.md` ahora** si el sistema tiene múltiples dominios, integraciones externas complejas, o decisiones que afectan a varios equipos — proporciona el marco para arquitecturas de sistemas complejos que siguen siendo mantenibles.
+
 Incluye:
 - Diagrama de componentes (en texto/ASCII o Mermaid)
 - Modelo de datos (entidades, relaciones, tipos)
@@ -131,6 +137,8 @@ Define exactamente qué existe en cada entorno:
 
 Lee el archivo de cada skill antes de usarla:
 
+- `bencium-human-architect-mindset` — **PRIMERO SIEMPRE**: pensamiento arquitectónico sistemático
+- `bencium-renaissance-architecture` — si el sistema es complejo o multi-dominio
 - `arquitectura/adr-writer.md` — formato y contenido correcto de los ADRs
 - `arquitectura/domain-modeler.md` — modelo de datos y entidades del dominio
 - `arquitectura/api-designer.md` — diseño de API REST y OpenAPI spec

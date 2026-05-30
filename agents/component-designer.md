@@ -88,6 +88,8 @@ Identificar qué categorías de reglas aplican al componente:
 
 ### Paso 2: Definir la dirección visual
 
+> **Lee `.claude/skills/bencium-bencium-impact-designer/SKILL.md` ahora** — antes de cualquier decisión visual. Proporciona el protocolo para comprometerse con una dirección distintiva: primero preguntar el propósito, luego ejecutar con convicción. Evita estéticas genéricas y "AI slop".
+
 ANTES de escribir código, responder:
 
 1. **¿Qué superficie usa?** → `bg-surface-page` / `bg-surface-card` / `bg-surface-elevated`
@@ -97,6 +99,12 @@ ANTES de escribir código, responder:
 5. **¿Es coherente con componentes similares?** → Buscar en src/components/ primero
 
 ### Paso 3: Implementar (Red → Green → Refactor)
+
+> **Si el componente tiene texto visible** (labels, headings, mensajes): Lee `.claude/skills/bencium-typography/SKILL.md` y aplícalo silenciosamente — comillas correctas, dashes, jerarquía tipográfica, espaciado.
+>
+> **Si el componente tiene >3 props booleanas o variantes**: Lee `.claude/skills/vercel-composition-patterns/SKILL.md` antes de diseñar la API del componente — compound components, context providers, state lifting.
+>
+> **Si el componente tiene animaciones o transiciones entre estados/páginas**: Lee `.claude/skills/vercel-react-view-transitions/SKILL.md` — View Transitions API nativa de React, sin librerías externas.
 
 **Convenciones de código:**
 ```typescript
@@ -192,6 +200,10 @@ Si el componente es para el Modo Conducción (conductor activo):
 ## Skills que invoco
 
 - `uxui/ui-ux-pro-max` — **SIEMPRE, Paso 1**: inteligencia de diseño, reglas y checklist
+- `bencium-bencium-impact-designer` — **Paso 2**: dirección visual distintiva, anti-AI-slop
+- `bencium-typography` — **Paso 3** si hay texto visible: tipografía correcta
+- `vercel-composition-patterns` — **Paso 3** si >3 props/variantes: compound components
+- `vercel-react-view-transitions` — **Paso 3** si hay animaciones/transiciones
 - `uxui/accessibility-auditor` — verificar contraste y accesibilidad del componente
 - `uxui/mobile-first-designer` — verificar comportamiento 375px vs 1280px
 - `calidad/code-reviewer` — revisión de calidad de código antes del PR

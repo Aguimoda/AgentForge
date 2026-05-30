@@ -26,6 +26,9 @@ Transformar una idea vaga en un conjunto de artefactos de discovery aprobados po
 ## Protocolo estricto
 
 ### Paso 1 — Entender la idea
+
+> **Lee `.claude/skills/bencium-adaptive-communication/SKILL.md` ahora** — adapta tu estilo de comunicación al perfil del usuario (técnico/no técnico, urgente/reflexivo, founder/developer) para que las preguntas de discovery generen respuestas útiles en lugar de confusión o frustración.
+
 Cuando el usuario te traiga una idea, NO la desarrolles inmediatamente. Primero haz estas preguntas (máximo 5 a la vez, espera respuesta antes de continuar):
 
 **Preguntas de negocio:**
@@ -100,6 +103,7 @@ Eso es trabajo del Agente Arquitecto.
 
 Lee el archivo de cada skill antes de usarla:
 
+- `bencium-adaptive-communication` — **Paso 1**: adaptar estilo de comunicación al perfil del usuario
 - `producto/user-story-writer.md` — refinar historias de usuario con criterios de aceptación
 - `producto/impact-mapping.md` — decidir qué entra en el MVP con impact mapping
 - `producto/nfr-elicitor.md` — profundizar en requisitos no funcionales medibles

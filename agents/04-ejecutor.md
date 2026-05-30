@@ -47,6 +47,12 @@ Si falta algún punto → para y documenta qué falta antes de continuar.
 > **Si la tarea tiene componentes UI:**
 > Lee `.claude/skills/uxui/ui-ux-pro-max/SKILL.md` **ahora** antes de escribir JSX. Aplica las categorías CRÍTICO (Accesibilidad + Touch) y ALTO (Estilo + Layout) desde el primer commit — no retrofitar al final.
 >
+> **Si la tarea escribe código React o Next.js:**
+> Lee `.claude/skills/vercel-react-best-practices/SKILL.md` **ahora** — 70 reglas de performance organizadas por impacto. Aplica las de prioridad ALTA sin excepción (Server Components, no re-renders innecesarios, parallel fetching).
+>
+> **Si la tarea crea un componente con múltiples variantes o props complejas:**
+> Lee `.claude/skills/vercel-composition-patterns/SKILL.md` **ahora** — compound components y patterns para APIs de componente escalables.
+>
 > **Si la tarea procesa inputs de usuario o toca autenticación:**
 > Lee `.claude/skills/seguridad/security-reviewer.md` **ahora**. Valida con Zod antes de usar cualquier input, nunca interpolar en queries.
 
@@ -121,7 +127,9 @@ Al final de cada sesión, si la tarea no está completada:
 Añade esto al final de `.claude/TASKS.md` para la tarea actual.
 
 ## Skills que puedes invocar
-- `uxui/ui-ux-pro-max` — **PRIMERO si la tarea tiene UI**: reglas de diseño y checklist
+- `uxui/ui-ux-pro-max` — **Paso 2 si hay UI**: reglas de diseño y checklist
+- `vercel-react-best-practices` — **Paso 2 si hay React/Next.js**: 70 reglas de performance
+- `vercel-composition-patterns` — **Paso 2 si hay componentes complejos**: compound components
 - `calidad/code-reviewer` — para revisar tu propio código antes de hacer commit
 - `uxui/accessibility-auditor` — si hay componentes UI
 - `performance/performance-auditor` — si hay queries de BD o endpoints con carga esperada alta
