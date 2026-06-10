@@ -41,6 +41,9 @@ Lee el prompt del usuario. Identifica el tipo de trabajo:
 | "arquitectura", "diseña el sistema", "qué stack" | `ARCH` | ARQ |
 | "estrategia de testing", "cobertura", "qué testear" | `QA` | QA |
 | "documenta", "actualiza docs", "README" | `DOCS` | DOC |
+| "deploy", "CI", "pipeline", "secrets", ".env", "monitoring" | `DEVOPS` | DEVOPS |
+| "incidente", "está caído", "rollback", "producción rota" | `INCIDENT` | DEVOPS → DOC |
+| "migración BD", "RLS", "schema", "nueva tabla" | `DB` | EJ (skill de BD del stack) → REV |
 
 **Abreviaturas:**
 - **VD** = Visual Designer (`agents/09-visual-designer.md`)
@@ -52,6 +55,7 @@ Lee el prompt del usuario. Identifica el tipo de trabajo:
 - **ARQ** = Arquitecto (`agents/02-arquitecto.md`)
 - **QA** = QA Strategy (`agents/06-qa-strategy.md`)
 - **DOC** = Documentación (`agents/08-documentacion.md`)
+- **DEVOPS** = DevOps (`agents/07-devops.md`)
 
 ---
 

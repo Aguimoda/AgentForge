@@ -1,0 +1,8 @@
+{
+  "_instrucciones": "Copia este fichero como .claude/current-task.json al inicio de cada tarea. Bórralo cuando la US esté en Done (HANDOFF del Revisor completado).",
+  "us_id": "US-XX",
+  "us_name": "Nombre descriptivo de la User Story",
+  "feature_path": "specs/features/[epic]/US-XX-nombre.feature",
+  "current_agent": "spec-writer | component-designer | ejecutor | revisor",
+  "started": "YYYY-MM-DDTHH:MM:SSZ"
+}

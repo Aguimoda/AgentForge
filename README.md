@@ -171,9 +171,17 @@ Claude debe responder listando los 11 agentes y el dispatcher.
 │   ├── 05-visual-designer-checkpoint.md
 │   ├── 06-orquestacion.md
 │   ├── 07-project-context.md    ← Auto-carga contexto del proyecto
-│   ├── 07-produccion-checklist.md
+│   ├── 08-produccion-checklist.md
+│   ├── 09-git-flow.md           ← Git flow obligatorio: rama → PR → CI → preview → merge
 │   ├── security.md
 │   └── spec-driven.md
+├── settings.json                ← Hooks de enforcement (PreToolUse + Stop)
+├── current-task.template.json   ← Plantilla del gate de tarea activa
+├── hooks/
+│   ├── gate-task.js             ← Bloquea escrituras en src/ sin .feature aprobado
+│   ├── gate-code-quality.js     ← Bloquea hex hardcodeado; avisa de console.log y emojis
+│   ├── gate-secrets.js          ← Bloquea secretos/credenciales en cualquier fichero
+│   └── stop-reminder.js         ← Bloquea el cierre con tarea activa o código sin commitear
 └── skills/
     ├── project-context/         ← PLANTILLA — copiar y rellenar
     ├── uxui/
@@ -203,3 +211,5 @@ Claude debe responder listando los 11 agentes y el dispatcher.
 **La spec precede al código.** Siempre. Sin `.feature` aprobado, el Ejecutor no puede empezar.
 
 **El contexto del producto es sagrado.** La regla `07-project-context.md` con `alwaysApply: true` garantiza que Claude siempre conoce el producto antes de actuar.
+
+**El enforcement es mecánico, no solo convención.** Los hooks de `settings.json` bloquean físicamente (exit 2) las escrituras que violan los gates: código sin spec, hex hardcodeado, secretos en el código, cierre de sesión sin protocolo. Los hooks parsean `tool_input` del payload de Claude Code y emiten el motivo del bloqueo por stderr para que Claude lo reciba como feedback y se autocorrija.

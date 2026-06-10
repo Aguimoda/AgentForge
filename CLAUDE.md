@@ -16,8 +16,37 @@
 | Code review / PR | **REV** |
 | Planning / sprint | **CON** → leer plan.md |
 | Arquitectura | **ARQ** |
+| Deploy, CI, pipeline, secrets, .env | **DEVOPS** |
+| Incidente en producción / rollback | **DEVOPS → DOC** |
+| Migraciones BD, RLS, schema | **EJ** (skill de BD del stack) **→ REV** |
+| Estrategia de testing, cobertura | **QA** |
+| Documentar, README, CHANGELOG | **DOC** |
 
-**VD**=Visual Designer · **SW**=Spec Writer · **CD**=Component Designer · **EJ**=Ejecutor · **REV**=Revisor · **CON**=Consultor · **ARQ**=Arquitecto
+**VD**=Visual Designer · **SW**=Spec Writer · **CD**=Component Designer · **EJ**=Ejecutor · **REV**=Revisor · **CON**=Consultor · **ARQ**=Arquitecto · **DEVOPS**=DevOps · **QA**=QA Strategy · **DOC**=Documentación
+
+---
+
+## ⚡ ENFORCEMENT — current-task.json (OBLIGATORIO antes de escribir código)
+
+Antes de que cualquier agente escriba en `src/`, copiar `current-task.template.json`
+como `.claude/current-task.json` y rellenarlo:
+
+```json
+{
+  "us_id": "US-XX",
+  "us_name": "Nombre de la User Story",
+  "feature_path": "specs/features/[epic]/US-XX-nombre.feature",
+  "current_agent": "spec-writer"
+}
+```
+
+Los hooks de `.claude/settings.json` (carpeta `hooks/`) **bloquean mecánicamente**:
+- Escrituras en `src/` sin `current-task.json` o sin el `.feature` en disco (`gate-task.js`)
+- Colores hex hardcodeados en componentes (`gate-code-quality.js`)
+- Secretos/credenciales en cualquier fichero (`gate-secrets.js`)
+- Cierre de sesión con tarea activa o código sin commitear (`stop-reminder.js`)
+
+Al hacer HANDOFF actualiza `current_agent`. Al completar la US (Revisor aprueba) → **borra el fichero**.
 
 ---
 
